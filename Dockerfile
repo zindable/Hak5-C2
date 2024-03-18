@@ -12,5 +12,5 @@ RUN apk add ca-certificates wget unzip \
     && test "$(cat sha256sums | grep ${VERSION}_${ARCH})" = "$(sha256sum c2-${VERSION}_${ARCH})" && echo "Checksum valid" || exit 1 \
     && mkdir /db
     
-CMD /app/c2-${VERSION}_${ARCH} -hostname ${DOMAIN} -reverseProxy -reverseProxyPort 8080 -db /db/c2.db
+CMD /app/c2-${VERSION}_${ARCH} -hostname ${DOMAIN} -reverseProxy -reverseProxyPort 443 -db /db/c2.db
 
